@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install @parcel/watcher
-        run: npm install @parcel/watcher --save-dev
+      - name: Rebuild native modules
+        run: npm rebuild
 
       - name: Build project
         run: npm run build
