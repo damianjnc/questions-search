@@ -5,7 +5,7 @@
   "homepage": "https://damianjnc.github.io/questions-search",
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url /questions-search/",
     "start": "parcel index.html"
   },
   "dependencies": {
