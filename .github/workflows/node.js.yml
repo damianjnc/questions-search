@@ -18,8 +18,19 @@ jobs:
         with:
           node-version: '20.10.0'
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm install
+
+      - name: Install @parcel/watcher
+        run: npm install @parcel/watcher --save-dev
 
       - name: Build project
         run: npm run build
