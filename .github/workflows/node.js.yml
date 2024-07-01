@@ -29,8 +29,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install @parcel/watcher
+        run: npm install @parcel/watcher --save-dev
+
       - name: Rebuild native modules
         run: npm rebuild
+
+      - name: Verify installed modules
+        run: ls -la node_modules/lightningcss
+
+      - name: Ensure correct binary
+        run: |
+          npm install --platform=linux --arch=x64 @parcel/watcher
+          npm install --platform=linux --arch=x64 lightningcss
 
       - name: Build project
         run: npm run build
