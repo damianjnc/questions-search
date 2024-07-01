@@ -23,7 +23,7 @@ const searchClient = algoliasearch(
 const future = { preserveSharedStateOnUnmount: true };
 
 export function App() {
-  console.log('App');
+  console.log('App2');
 
   return (
     <div>
